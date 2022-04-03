@@ -1,18 +1,18 @@
-const MongoClient = require("mongodb").MongoClient;
+const database = require("mongoose");
 
 const is_heroku = process.env.IS_HEROKU || false;
 
+const databaseName = "lab_example"
 
-const herokuURI = "mongodb://localhost/?authSource=admin&retryWrites=true&w=majority;"
+const herokuURI = "mongodb+srv://janeral:2022coding@cluster0.gi0kw.mongodb.net/" + lab_example + "retryWrites=true&w=majority"
 
-const localURI = "mongodb://localhost/?authSource=admin&retryWrites=true&w=majority;"
+const localURI =
+	"mongodb://localhost/" + lab_example + "?authSource=admin&retryWrites=true"
 
 if (is_heroku) {
-	var database = new MongoClient(herokuURI, {useNewUrlParser: true, useUnifiedTopology: true});
+	database.connect(herokuURI, { useNewUrlParser: true, useUnifiedTopology: true });
+} else {
 }
-else {
-	var database = new MongoClient(localURI, {useNewUrlParser: true, useUnifiedTopology: true});
-}
+database.connect(localURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 module.exports = database;
-		
