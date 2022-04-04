@@ -12,7 +12,6 @@ const localURI =
 if (is_heroku) {
 	database.connect(herokuURI, { useNewUrlParser: true, useUnifiedTopology: true });
 } else {
+	database.connect(localURI, { useNewUrlParser: true, useUnifiedTopology: true });
 }
-database.connect(localURI, { useNewUrlParser: true, useUnifiedTopology: true });
-
 module.exports = database;
