@@ -4,10 +4,10 @@ const is_heroku = process.env.IS_HEROKU || false;
 
 const databaseName = "lab_example"
 
-const herokuURI = "mongodb+srv://janeral:2022coding@cluster0.gi0kw.mongodb.net/" + lab_example + "retryWrites=true&w=majority"
+const herokuURI = "mongodb+srv://janeral:bcitdb@cluster0.gi0kw.mongodb.net/lab_example?retryWrites=true&w=majority";
 
 const localURI =
-	"mongodb://localhost/" + lab_example + "?authSource=admin&retryWrites=true"
+	"mongodb://localhost/" + databaseName + "?authSource=admin&retryWrites=true"
 
 if (is_heroku) {
 	database.connect(herokuURI, { useNewUrlParser: true, useUnifiedTopology: true });
