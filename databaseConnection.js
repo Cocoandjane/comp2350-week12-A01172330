@@ -4,7 +4,7 @@ const is_heroku = process.env.IS_HEROKU || false;
 
 const databaseName = "lab_example"
 
-const herokuURI = "mongodb+srv://janeral:bcitdb@cluster0.gi0kw.mongodb.net/lab_example?retryWrites=true&w=majority";
+const herokuURI = "mongodb+srv://janeral:bcitdb@cluster0.gi0kw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 const localURI =
 	"mongodb://localhost/" + databaseName + "?authSource=admin&retryWrites=true"
